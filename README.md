@@ -15,7 +15,7 @@ hyfrmn-favs.tumblr.com
 How to Install
 --------------
 
-1. Download the `plugin.image.xbmctumblrslideshoew` directory.
+1. Download the `plugin.image.xbmctumblrslideshow` directory.
 2. Zip the directory into `plugin.image.xbmctumbl` (Most OSs Right Click > Zip File or Compress "File Name")
 3. Install from zip File (System > Add-ons)
 
