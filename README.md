@@ -1,8 +1,9 @@
 XBMC Tumbl
-
+==========
 A Plugin for XBMC to view images from tumblr blogs.
 
-Usage:
+Usage
+-----
 Under configuration set tubmlrs to be a space seperated list of tubmlr blogs.
 i.e:  sabino vazilla hyfrmn-favs
 
@@ -11,8 +12,19 @@ sabino.tumblr.com
 vazilla.tumblr.com
 hyfrmn-favs.tumblr.com
 
+How to Install
+--------------
 
-License:
+1. Download the `plugin.image.xbmctumbl` directory.
+2. Zip the directory into `plugin.image.xbmctumbl` (Most OSs Right Click > Zip File or Compress "File Name")
+3. Install from zip File (System > Add-ons)
+
+
+License
+-------
+This plugin uses the Tumblr application programming interface but is not endorsed or certified by Tumblr, Inc. All of the Tumblr logos and trademarks displayed on this plugin are the property of Tumblr, Inc.
+
+
 
 XBMC Tumbl
 Copyright (C) 2013 Marshall Petersen
