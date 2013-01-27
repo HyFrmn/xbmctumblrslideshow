@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.image.xbmctumbl" name="XBMC Tumbl" version="0.0.1"
+<addon id="plugin.image.xbmctumbl" name="Tumblr - SlideShow" version="0.0.1"
        provider-name="Marshall Petersen">
   <requires>
     <import addon="script.module.simplejson" version="2.0.10"/>
