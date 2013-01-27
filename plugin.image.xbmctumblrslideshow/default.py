@@ -30,7 +30,7 @@ def catagories():
 	for cat in cats:
 		thumbnail = 'http://api.tumblr.com/v2/blog/%s.tumblr.com/avatar/256' % cat
 		listitem = xbmcgui.ListItem(cat, iconImage=thumbnail)
-		ok = plugin.addDirectoryItem(url='plugin://plugin.image.xbmctumbl/%s' % cat, listitem=listitem, isFolder=True)
+		ok = plugin.addDirectoryItem(url='%s/%s' % (plugin.root, cat), listitem=listitem, isFolder=True)
 	plugin.endOfDirectory()
 
 urls = []
@@ -38,7 +38,6 @@ def listimages(tumblr):
 	print tumblr
 	start = int(plugin.query.get('start',0))
 	url = 'http://api.tumblr.com/v2/blog/%s.tumblr.com/posts/photo?api_key=%s&offset=%d' % (tumblr, API_KEY, start)
-	#url = 'http://%s.tumblr.com/api/read?start=%d' % (tumblr, start)
 	print 'URL:', url
 	fd = urllib2.urlopen(url)
 	dom = json.load(fd)

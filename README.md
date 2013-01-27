@@ -1,4 +1,4 @@
-XBMC Tumbl
+XBMC Tumblr SlideShow
 ==========
 A Plugin for XBMC to view images from tumblr blogs.
 
@@ -15,7 +15,7 @@ hyfrmn-favs.tumblr.com
 How to Install
 --------------
 
-1. Download the `plugin.image.xbmctumbl` directory.
+1. Download the `plugin.image.xbmctumblrslideshoew` directory.
 2. Zip the directory into `plugin.image.xbmctumbl` (Most OSs Right Click > Zip File or Compress "File Name")
 3. Install from zip File (System > Add-ons)
 
@@ -26,7 +26,7 @@ This plugin uses the Tumblr application programming interface but is not endorse
 
 
 
-XBMC Tumbl
+XBMC Tumblr Slideshow
 Copyright (C) 2013 Marshall Petersen
 
 This program is free software; you can redistribute it and/or
