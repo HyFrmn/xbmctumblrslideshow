@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.image.xbmctumbl" name="XBMC Tumbl" version="0.0.1"
+       provider-name="Marshall Petersen">
+  <requires>
+    <import addon="script.module.simplejson" version="2.0.10"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>image</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en">View photos from tumblr.</summary>
+    <description>
+
+    </description> 
+    <license>GPL 2.0</license>
+  </extension>
+</addon>
