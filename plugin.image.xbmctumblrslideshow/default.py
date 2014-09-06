@@ -5,6 +5,7 @@ import json
 import ConfigParser
 import xbmcgui
 import xbmcaddon
+import os
 __settings__ = xbmcaddon.Addon(id='script.image.lastfm.slideshow')
 __language__ = __settings__.getLocalizedString
 lib = os.path.join(__settings__.getAddonInfo('path'), 'Resources', 'lib')
@@ -16,9 +17,12 @@ from xbmcapi import XBMCSourcePlugin
 config = ConfigParser.ConfigParser()
 config.read('~/.xbmc-tumblr_config')
 
-
-API_KEY = config.get('API','key')
-
+#Use old API key if one is not found
+try:
+	API_KEY = config.get('API','key')
+except (ConfigParser.NoSectionError ,ConfigParser.NoOptionError) as e:
+	API_KEY = 'x1XhpKkt9qCtqyXdDEGHp5TCDQ1TOWm2VTLiWUm0FHpdkHI5Rj'
+	pass
 
 def getText(nodelist):
     rc = []
@@ -30,9 +34,14 @@ def getText(nodelist):
 
 plugin = XBMCSourcePlugin()
 
-def catagories():
-#	cats = [c.strip() for c in plugin.getSetting('tumblrs').split()]
-	cats = config.get('blogs','blog_name').split(',')
+def catagories():	
+#Use settings from menu if nothing is found in the config file
+	try:	
+		cats = config.get('blogs','blog_name').split(',')
+	except (ConfigParser.NoSectionError ,ConfigParser.NoOptionError) as e:
+		cats = [c.strip() for c in plugin.getSetting('tumblrs').split()]
+		pass
+
 	for cat in cats:
 		thumbnail = 'http://api.tumblr.com/v2/blog/%s.tumblr.com/avatar/256' % cat
 		listitem = xbmcgui.ListItem(cat, iconImage=thumbnail)
