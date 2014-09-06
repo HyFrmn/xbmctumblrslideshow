@@ -15,7 +15,7 @@ print sys.path
 from xbmcapi import XBMCSourcePlugin
 
 config = ConfigParser.ConfigParser()
-config.read('~/.xbmc-tumblr_config')
+config.read(os.path.join(__settings__.getAddonInfo('path'),'config.txt'))
 
 #Use old API key if one is not found
 try:
