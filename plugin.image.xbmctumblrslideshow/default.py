@@ -2,7 +2,7 @@
 import sys
 import urllib2
 import json
-
+import ConfigParser
 import xbmcgui
 import xbmcaddon
 __settings__ = xbmcaddon.Addon(id='script.image.lastfm.slideshow')
@@ -13,7 +13,12 @@ sys.path.append(lib)
 print sys.path
 from xbmcapi import XBMCSourcePlugin
 
-API_KEY = 'x1XhpKkt9qCtqyXdDEGHp5TCDQ1TOWm2VTLiWUm0FHpdkHI5Rj'
+config = ConfigParser.ConfigParser()
+config.read('~/.xbmc-tumblr_config')
+
+
+API_KEY = config.get('API','key')
+
 
 def getText(nodelist):
     rc = []
@@ -26,7 +31,8 @@ def getText(nodelist):
 plugin = XBMCSourcePlugin()
 
 def catagories():
-	cats = [c.strip() for c in plugin.getSetting('tumblrs').split()]
+#	cats = [c.strip() for c in plugin.getSetting('tumblrs').split()]
+	cats = config.get('blogs','blog_name').split(',')
 	for cat in cats:
 		thumbnail = 'http://api.tumblr.com/v2/blog/%s.tumblr.com/avatar/256' % cat
 		listitem = xbmcgui.ListItem(cat, iconImage=thumbnail)
